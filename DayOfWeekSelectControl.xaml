@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="DXOrganizer.DayOfWeekSelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="Auto" d:DesignWidth="Auto">
+    <Grid>
+            <StackPanel Margin="10">
+                <CheckBox Content="Понедельник" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Вторник" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Среда" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Четверг" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Пятница" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Суббота" Style="{DynamicResource deyOfWeekSelect}"/>
+                <CheckBox Content="Воскресенье" Style="{DynamicResource deyOfWeekSelect}"/>
+            </StackPanel>
+    </Grid>
+</UserControl>

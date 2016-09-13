@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="DXOrganizer.AlarmClocksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:DXOrganizer.View_Models"
+        xmlns:converter ="clr-namespace:DXOrganizer.Converters"
+        xmlns:extentions="clr-namespace:DXOrganizer.Extentions"
+        Height="500" Width="750" Background="{x:Null}"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewModels:AlarmClocksViewModel}"
+        Loaded="AlarmClocksWindow_OnLoaded">
+    <UserControl.Resources>
+        <extentions:ImageConverter x:Key="ImageConverter"></extentions:ImageConverter>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0">
+            <DataGrid IsReadOnly="True" RowEditEnding="DataGrid_OnRowEditEnding" ItemsSource="{Binding DaysOfWeekChecks}" AutoGenerateColumns="False" Background="#EBEBEB" RowBackground="#232323" FontSize="25" FontFamily="/DXOrganizer;component/Fonts/#CalipsoC" Foreground="#EBEBEB" VerticalContentAlignment="Center" RowHeight="60" VerticalGridLinesBrush="#686868" HorizontalGridLinesBrush="#EBEBEB" HeadersVisibility="None" SelectedItem="{Binding SelectedDayOfWeekCheck}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn ElementStyle="{DynamicResource alarmClocksWindowStyle}" Binding="{Binding AlarmClockName}" ClipboardContentBinding="{x:Null}" Header="Будильник" Width="300"/>
+                    <DataGridTextColumn ElementStyle="{DynamicResource alarmClocksWindowStyle}" Binding="{Binding Start}" ClipboardContentBinding="{x:Null}" Header="Время" Width="95"/>
+                    <DataGridTextColumn ElementStyle="{DynamicResource alarmClocksWindowStyle}" Binding="{Binding DaysOfWeek}" ClipboardContentBinding="{x:Null}" Header="Повторение" Width="270"/>
+                    <DataGridTemplateColumn Header="Звук">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding AlarmStatusImage, Converter={StaticResource ImageConverter}}" Width="50" Margin="5"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Background="{DynamicResource footerDockPanelBackgroundBrush}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="OptionsButton" Margin="5,5,10,5" Style="{DynamicResource footerButton}" Click="EditButton_OnClick">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/options_black.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="RemoveButton" Margin="5,5,10,5" Style="{DynamicResource footerButton}" Click="RemoveButton_OnClick">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/minus.png"/>
+                    </StackPanel>
+                </Button>
+                <Button Name="AddButton" Margin="5,5,10,5"  Style="{DynamicResource footerButton}" Click="AddButton_OnClick">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/add.png"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,201 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- Lables Style -->
+    <Style x:Key="logo" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="30" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="FontFamily" Value="Centaur" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{DynamicResource logoForegroundBrush}" />
+    </Style>
+
+    <Style x:Key="soundSelectLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="mainMenuLable" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontFamily" Value="LidiaC" />
+        <Setter Property="Margin" Value="5,10,10,10" />
+        <Setter Property="Foreground" Value="{DynamicResource mainMenuLableBackgroundBrush}" />
+    </Style>
+    
+    <Style x:Key="suspendLable" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Background" Value="#E8E8E8"/>
+    </Style>
+
+    <Style x:Key="deferLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="/DXOrganizer;component/Fonts/#CalipsoC" />
+        <Setter Property="Foreground" Value="{DynamicResource deferLableForegroundBrush}"/>
+    </Style>
+
+    <Style x:Key="alarmWindowLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="/DXOrganizer;component/Fonts/#CalipsoC"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="10,24,10,0"/>
+    </Style>
+
+    <!-- Buttons Style -->
+    <Style x:Key="headerButton" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource headerButtonBackgroundBrush}" />
+    </Style>
+
+    <Style x:Key="footerButton" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Background" Value="{DynamicResource footerButtonBackgroundBrush}" />
+    </Style>
+
+    <Style x:Key="mainMenuButton" TargetType="{x:Type Button}">
+        <Setter Property="DockPanel.Dock" Value="Left" />
+        <Setter Property="Height" Value="66" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="Background" Value="{DynamicResource mainMenuButtonBackgroundBrush}" />
+        <Style.Triggers>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource mainMenuButtonClickBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation From="1" To="0.8" Duration="0:0:0.1" Storyboard.TargetProperty="Opacity"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+        </Style.Triggers>
+       
+                
+    </Style>
+
+    <Style x:Key="repeatButton" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="/DXOrganizer;component/Fonts/#MicraDi" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Background" Value="{DynamicResource repeatButtonBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource repeatButtonForegroundBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource logoBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="{DynamicResource repeatButtonIsPressedBackgroundBrush}"/>
+                <Setter Property="Foreground" Value="{DynamicResource repeatButtonIsPressedForegroundBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="OkButton" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="UltraBold"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Margin" Value="20,10" />
+        <Setter Property="BorderBrush" Value="{DynamicResource deferLableForegroundBrush}"/>
+        <Setter Property="FontFamily" Value="/DXOrganizer;component/Fonts/#CalipsoC" />
+        <Setter Property="Background" Value="{DynamicResource headerButtonBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource repeatButtonForegroundBrush}"/>
+    </Style>
+    
+    <!-- Images Style -->
+    <Style x:Key="mainMenuImage" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Margin" Value="10,5,5,5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+    </Style>
+
+    <Style x:Key="Logo" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="250" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+
+    <!-- Stack Panels Style -->
+    <Style x:Key="mainMenuStackPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="MinWidth" Value="250" />
+        <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+
+    <Style x:Key="soundSelectPanel" TargetType="{x:Type StackPanel}">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource logoBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="{DynamicResource alarmClockBackgroundBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Check Boxes Style -->
+    <Style x:Key="deyOfWeekSelect" TargetType="{x:Type CheckBox}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Foreground" Value="{DynamicResource footerButtonBackgroundBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource logoForegroundBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Combo Boxes Style -->
+    <Style x:Key="soundSelectBox" TargetType="{x:Type ComboBox}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Width" Value="150" />
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Background" Value="{DynamicResource footerButtonBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource mainMenuButtonBackgroundBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource logoBackgroundBrush}"/>
+            </Trigger>
+            <Trigger Property="IsSelectionActive" Value="True">
+                <Setter Property="Background" Value="{DynamicResource alarmClockBackgroundBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!--Boarder Style-->
+    <Style x:Key="alarmWindowBorder" TargetType="{x:Type Border}">
+        <Setter Property="Background" Value="{DynamicResource alarmWindowBoarderBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FFD6D6D6"/>
+    </Style>
+
+    <!-- Data Grid Style -->
+    <Style x:Key="alarmClocksWindowStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="5"/>
+    </Style>
+</ResourceDictionary>

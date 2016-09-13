@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="DXOrganizer.Controls.SoundSelectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="180">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top">
+                <StackPanel.Resources>
+                    <x:Array x:Key="Sounds" Type="{x:Type sys:String}">
+                        <sys:String>Chimes</sys:String>
+                        <sys:String>Xilophone</sys:String>
+                        <sys:String>Chords</sys:String>
+                        <sys:String>Tap</sys:String>
+                        <sys:String>Jingle</sys:String>
+                        <sys:String>Descending</sys:String>
+                        <sys:String>Bounce</sys:String>
+                        <sys:String>Echo</sys:String>
+                        <sys:String>Ascending</sys:String>
+                    </x:Array>
+                    <sys:String x:Key="SelectedSound">Chimes</sys:String>
+                </StackPanel.Resources>
+                <ComboBox Name="SoundSelectBox" ItemsSource="{DynamicResource Sounds}" Style="{DynamicResource soundSelectBox}" SelectedItem="{DynamicResource SelectedSound}">
+                    <ComboBox.ItemTemplate>
+                        <ItemContainerTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Image Source="../Images/play_trp.png"/>
+                                <Label Style="{DynamicResource soundSelectLabel}" Content="{Binding}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch"/>
+                            </StackPanel>
+                        </ItemContainerTemplate>
+                    </ComboBox.ItemTemplate>
+                    <ComboBox.ItemContainerStyle>
+                        <Style TargetType="ComboBoxItem">
+                            <Setter Property="Background" Value="{DynamicResource alarmClockBackgroundBrush}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource alarmClockBackgroundBrush}"/>
+                        </Style>
+                    </ComboBox.ItemContainerStyle>
+                </ComboBox>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</UserControl>
