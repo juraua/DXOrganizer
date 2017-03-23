@@ -13,6 +13,7 @@ namespace AlarmClock.Models
     {
         public DaysOfWeekCheck()
         {
+            //DaysOfWeek = Enumerable.Range(0, 7).Select(e => false).ToList();
             DaysOfWeekChecked = Enumerable.Range(0, 7).Select(i => new CheckItem { Checked = false }).ToList();
         }
 

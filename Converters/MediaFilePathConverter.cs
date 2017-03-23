@@ -15,6 +15,7 @@ namespace DXOrganizer.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            //var str = "Media files" + "/" + (string)value + ".mp3";
             var str = Configuration.AssemblyDirectory + @"\Media files\" + (string)value + ".mp3";
             return str;
         }

@@ -214,6 +214,8 @@ namespace DXOrganizer.View_Models
                     DaysOfWeekList[i].Checked = true;
                     check.DaysOfWeekChecked[i].Name = DaysOfWeekList[i].Name;
                     check.DaysOfWeek += DaysOfWeekList[i].Name;
+                    //if (!string.IsNullOrEmpty(DaysOfWeekList[i+1].Name))
+                    //    check.DaysOfWeek += ", ";
                 }
                 if (check.DaysOfWeekChecked.All(e => e.Checked))
                 {

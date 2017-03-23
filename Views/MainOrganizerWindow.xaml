@@ -23,7 +23,23 @@
             </StackPanel>
         </DockPanel>
         <DockPanel Grid.Column="1" Grid.Row="0" Background="{DynamicResource headerDockPanelBackgroundBrush}">
-            
+            <!--<StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" Margin="5,5,15,5">
+                <Button x:Name="MinimizeButton" Style="{DynamicResource headerButton}">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/minimize.png"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="ExpandButton" Style="{DynamicResource headerButton}">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/app_window.png"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="CloseButton" Click="CloseButton_OnClick" Style="{DynamicResource headerButton}">
+                    <StackPanel>
+                        <Image Width="25" Height="25" Source="../Images/close.png"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>-->
         </DockPanel>
         <DockPanel Grid.Column="0" Grid.Row="1">
             <StackPanel DockPanel.Dock="Left">
@@ -31,6 +47,7 @@
                     <DockPanel>
                         <StackPanel DockPanel.Dock="Left" Style="{DynamicResource mainMenuStackPanel}">
                             <Image Style="{DynamicResource mainMenuImage}" Source="../Images/calendar_1.png"/>
+                            <!--Loaded="Image_Loaded"-->
                             <Label Style="{DynamicResource mainMenuLable}" Content="Календарь"/>
                         </StackPanel>
                         <StackPanel VerticalAlignment="Center" DockPanel.Dock="Right">

@@ -11,7 +11,8 @@ namespace DXOrganizer.Models
             //------------AlarmClockDbInitializer----------
             
             //------------TextNoteDbInitializer-----------
-            
+
+
             //------------SchedulerDBInitializer----------
             IList<EFResource> defaultResources = new List<EFResource>();
 

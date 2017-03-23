@@ -16,6 +16,11 @@
         <Setter Property="FontSize" Value="14" />
         <Setter Property="FontFamily" Value="Verdana"/>
         <Setter Property="Foreground" Value="White"/>
+        <!--<Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Red"/>
+            </Trigger>
+        </Style.Triggers>-->
     </Style>
 
     <Style x:Key="mainMenuLable" TargetType="{x:Type Label}">
@@ -72,6 +77,9 @@
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="{DynamicResource mainMenuButtonBackgroundBrush}" />
         <Style.Triggers>
+            <!--<Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource mainMenuButtonClickBackgroundBrush}"/>
+            </Trigger>-->
             <Trigger Property="IsPressed" Value="True">
                 <Setter Property="Background" Value="{DynamicResource mainMenuButtonClickBackgroundBrush}"/>
             </Trigger>
@@ -122,6 +130,21 @@
         <Setter Property="FontFamily" Value="/DXOrganizer;component/Fonts/#CalipsoC" />
         <Setter Property="Background" Value="{DynamicResource headerButtonBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource repeatButtonForegroundBrush}"/>
+        <!--<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value=".75" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value=".75" />
+                            <Setter TargetName="BorderBackground" Property="Background" Value="#000" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>-->
     </Style>
     
     <!-- Images Style -->
@@ -198,4 +221,53 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Padding" Value="5"/>
     </Style>
+    <!--<Style x:Key="DataGridRowHeader" TargetType="{x:Type DataGridRowHeader}">
+        <Setter Property="Height" Value="20" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="Background" Value="{DynamicResource mainMenuButtonBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource deferLableForegroundBrush}"/>
+    </Style>-->
+
+    <!--<Style x:Key="ConttrolResource" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value=".75" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Opacity" Value=".75" />
+                            <Setter TargetName="BorderBackground" Property="Background" Value="#000" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+    
+    <!--<Style x:Key="glassButton" TargetType="{x:Type Button}">
+        <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">
+                <ControlTemplate.Resources>
+                    <Storyboard x:Key="fadeIn">
+                        <DoubleAnimation Duration="0:0:0.3"
+                                            Storyboard.TargetName="glow"
+                                            Storyboard.TargetProperty="(UIElement.Opacity)"
+                                            To="1" />
+                    </Storyboard>
+                    <Storyboard x:Key="fadeOut">
+                        <DoubleAnimation Duration="0:0:0.3"
+                                           Storyboard.TargetName="glow"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)"
+                                           To="0" />
+                    </Storyboard>
+                </ControlTemplate.Resources>
+            </ControlTemplate>
+        </Setter.Value>
+        </Setter>
+    </Style>-->
 </ResourceDictionary>
